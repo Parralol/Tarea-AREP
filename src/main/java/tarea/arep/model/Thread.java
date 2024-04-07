@@ -1,10 +1,13 @@
 package tarea.arep.model;
 
 import javax.persistence.*;
+
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
+
 import java.util.List;
 
 @Entity
-public class Thread {
+public class Thread extends PanacheEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -74,67 +77,4 @@ public class Thread {
     public void setParentThread(Thread parentThread) {
         this.parentThread = parentThread;
     }
-
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
-        result = prime * result + ((name == null) ? 0 : name.hashCode());
-        result = prime * result + ((posts == null) ? 0 : posts.hashCode());
-        result = prime * result + ((users == null) ? 0 : users.hashCode());
-        result = prime * result + ((parentPost == null) ? 0 : parentPost.hashCode());
-        result = prime * result + ((parentThread == null) ? 0 : parentThread.hashCode());
-        return result;
-    }
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Thread other = (Thread) obj;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        if (name == null) {
-            if (other.name != null)
-                return false;
-        } else if (!name.equals(other.name))
-            return false;
-        if (posts == null) {
-            if (other.posts != null)
-                return false;
-        } else if (!posts.equals(other.posts))
-            return false;
-        if (users == null) {
-            if (other.users != null)
-                return false;
-        } else if (!users.equals(other.users))
-            return false;
-        if (parentPost == null) {
-            if (other.parentPost != null)
-                return false;
-        } else if (!parentPost.equals(other.parentPost))
-            return false;
-        if (parentThread == null) {
-            if (other.parentThread != null)
-                return false;
-        } else if (!parentThread.equals(other.parentThread))
-            return false;
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Thread [id=" + id + ", name=" + name + ", posts=" + posts + ", users=" + users + ", parentPost="
-                + parentPost + ", parentThread=" + parentThread + "]";
-    }
-
-
-    
 }

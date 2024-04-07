@@ -21,9 +21,13 @@ public class Post extends PanacheEntity{
     @Column(name = "id",unique=true, nullable = false)
     private Long id;
 
-
+    @Column(name = "content")
     private String content;
+
+    @Column(name = "user")
     private Long user_id;
+    
+    @Column(name = "stream_id")
     private Long stream_id;
   
 

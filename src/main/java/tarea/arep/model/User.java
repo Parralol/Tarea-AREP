@@ -13,10 +13,14 @@ public class User extends PanacheEntity{
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
 
+    @Column(name = "name")
     private String name;
-    private String email;
-    private String pass;
 
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "pass")
+    private String pass;
 
     public User() {
     }

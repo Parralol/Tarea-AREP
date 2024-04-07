@@ -11,14 +11,19 @@ public class Thread extends PanacheEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
     private String name;
-    @OneToMany
+
+    @OneToMany(mappedBy = "thread", cascade = CascadeType.ALL)
     private List<Post> posts; 
-    @ManyToMany
+
+    @ManyToMany(mappedBy = "threads", cascade = CascadeType.ALL)
     private List<User> users; 
-    @OneToOne
+
+    @OneToOne(mappedBy = "thread", cascade = CascadeType.ALL)
     private Post parentPost;
-    @OneToOne
+
+    @OneToOne(mappedBy = "thread", cascade = CascadeType.ALL)
     private Thread parentThread;
 
     

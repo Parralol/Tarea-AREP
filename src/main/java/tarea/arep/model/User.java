@@ -18,6 +18,9 @@ public class User extends PanacheEntity{
     private String pass;
 
 
+    public User() {
+    }
+
     public User(Long id, String name, String email, String pass) {
         this.id = id;
         this.name = name;

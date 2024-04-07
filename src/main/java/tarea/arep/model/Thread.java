@@ -21,6 +21,11 @@ public class Thread extends PanacheEntity{
     @OneToOne
     private Thread parentThread;
 
+    
+
+    public Thread() {
+    }
+
     public Thread(Long id, String name, List<Post> posts, List<User> users, Post parentPost, Thread parentThread) {
         this.id = id;
         this.name = name;

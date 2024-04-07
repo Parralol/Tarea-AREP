@@ -9,9 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
+
 @Entity
 @Table(name = "posts")
-public class Post {
+public class Post extends PanacheEntity{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

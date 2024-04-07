@@ -11,16 +11,16 @@ public class User extends PanacheEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id", unique = true, nullable = false)
-    private Long id;
+    public Long id;
 
     @Column(name = "name")
-    private String name;
+    public String name;
 
     @Column(name = "email")
-    private String email;
+    public String email;
 
     @Column(name = "pass")
-    private String pass;
+    public String pass;
 
     public User() {
     }

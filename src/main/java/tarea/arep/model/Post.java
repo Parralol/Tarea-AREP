@@ -19,16 +19,16 @@ public class Post extends PanacheEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id",unique=true, nullable = false)
-    private Long id;
+    public Long id;
 
     @Column(name = "content")
-    private String content;
+    public String content;
 
     @Column(name = "user")
-    private Long user_id;
+    public Long user_id;
     
     @Column(name = "stream_id")
-    private Long stream_id;
+    public Long stream_id;
   
 
     public Post() {

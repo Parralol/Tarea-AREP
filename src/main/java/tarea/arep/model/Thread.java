@@ -10,21 +10,21 @@ import java.util.List;
 public class Thread extends PanacheEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    public Long id;
     
-    private String name;
+    public String name;
 
     @OneToMany(mappedBy = "thread", cascade = CascadeType.ALL)
-    private List<Post> posts; 
+    public List<Post> posts; 
 
     @ManyToMany(mappedBy = "threads", cascade = CascadeType.ALL)
-    private List<User> users; 
+    public List<User> users; 
 
     @OneToOne(mappedBy = "thread", cascade = CascadeType.ALL)
-    private Post parentPost;
+    public Post parentPost;
 
     @OneToOne(mappedBy = "thread", cascade = CascadeType.ALL)
-    private Thread parentThread;
+    public Thread parentThread;
 
     
 

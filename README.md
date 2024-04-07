@@ -10,13 +10,13 @@ Herramientas usadas:
 
 ### generar maven wrapper
 
-     mvn -N io.takari:maven:wrapper
+     mvn wrapper:wrapper
      
 ### Compilar el programa
 
-Primero es necesario realizar
+     mvn clean install
 
-    mvn clean install
+     mvn compile
 
 
 

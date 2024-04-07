@@ -8,6 +8,8 @@ import javax.ws.rs.core.MediaType;
 import tarea.arep.model.Post;
 import java.util.List;
 
+
+
 @Path("/post")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)

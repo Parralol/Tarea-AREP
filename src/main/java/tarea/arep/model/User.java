@@ -2,11 +2,12 @@ package tarea.arep.model;
 
 import javax.persistence.*;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
 @Entity
+@Cacheable
 @Table(name = "Users")
-public class User extends PanacheEntity{
+public class User extends PanacheEntityBase{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
@@ -32,27 +33,42 @@ public class User extends PanacheEntity{
         this.pass = pass;
     }
 
+    @Embedded
     public Long getId() {
         return id;
     }
+
+    @Embedded
     public void setId(Long id) {
         this.id = id;
     }
+
+    @Embedded
     public String getName() {
         return name;
     }
+
+    @Embedded
     public void setName(String name) {
         this.name = name;
     }
+
+    @Embedded
     public String getEmail() {
         return email;
     }
+
+    @Embedded
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Embedded
     public String getPass() {
         return pass;
     }
+
+    
     public void setPass(String pass) {
         this.pass = pass;
     }
